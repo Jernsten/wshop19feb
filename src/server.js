@@ -1,9 +1,9 @@
 // Här ska vi definiera vår server! Men vi ska inte starta den
 // (alltså app.listen(port, ()=>{}), har vi inte i denna fil, utan i index.js)
 const express = require('express')
-const sassMiddleware = require('node-sass-middleware')
+// const sassMiddleware = require('node-sass-middleware')
 const app = express()
-const port = 8080
+const port = process.env.PORT || 8080 // KEMAL // hämtar port från procenv
 const productItem = require('../model/product')
 
 const ROUTE = {
@@ -20,21 +20,17 @@ const VIEW = {
     addProduct: 'add-product'
 }
 
-app.use(sassMiddleware({ // tell sassMiddleware where src file and dest directory is
-    src: 'sass',
-    dest: 'public',
-    // debug: true, // för att skriva ut data till konsollen
-    outputStyle: 'compressed'
-}))
+
+// SASSKODEN SOM FÖRSVANN Enbart för dev, använd istället webpack "css loader" eller dyl
+
+
 // define a static folder, 'public'
-app.use(express.static('public'))
+app.use(express.static('dist/public')) // KEMAL dist/public
 // 
 app.use(express.urlencoded({ extended: true }));
+
 // define what view engine to use, ejs in this case
 app.set('view engine', 'ejs')
-
-
-
 
 // ------------------  Routs  -------------------//
 app.get(ROUTE.gallery, async (req, res) => {
