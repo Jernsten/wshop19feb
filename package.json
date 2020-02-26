@@ -1,6 +1,6 @@
 {
   "name": "wshop19feb",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple webshop",
   "main": "index.js",
   "scripts": {
@@ -19,13 +19,13 @@
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "mongoose": "^5.9.1",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "css-loader": "^3.4.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "mocha": "^7.0.1",
     "node-sass-middleware": "^0.11.0",
     "sass-loader": "^8.0.2",
