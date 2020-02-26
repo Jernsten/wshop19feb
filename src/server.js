@@ -2,7 +2,6 @@
 // (alltså app.listen(port, ()=>{}), har vi inte i denna fil, utan i index.js)
 const express = require('express')
 const productItem = require('../model/product')
-const sassMiddleware = require('node-sass-middleware')
 const app = express()
 const isDevMode = process.env.NODE_ENV == 'development'
 const port = process.env.PORT || 8080
@@ -23,6 +22,7 @@ const VIEW = {
 
 // sass middleware only used in development mode
 if (isDevMode) {
+    const sassMiddleware = require('node-sass-middleware')
     app.use(sassMiddleware({
         src: 'sass',
         dest: 'public',
