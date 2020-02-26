@@ -8,7 +8,7 @@
     "devStart": "nodemon index.js",
     "sass": "node-sass --watch sass -o public",
     "build": "webpack",
-    "start": "npm build && node dist/bundle.js"
+    "start": "node dist/bundle.js"
   },
   "keywords": [
     "webshop",
